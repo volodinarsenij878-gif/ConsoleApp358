@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program3
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            const int size = 7;
+            int[,] goldMap = new int[size, size];
+
+            // Заполняем матрицу — здесь пример: значение зависит от позиции
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    // Пример логики ценности: сумма индексов + случайный небольшой разброс
+                    goldMap[i, j] = (i + j) * 10 + (i * j % 5);
+                }
+            }
+
+            // Вывод матрицы в консоль
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    Console.Write($"{goldMap[i, j],4}");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
